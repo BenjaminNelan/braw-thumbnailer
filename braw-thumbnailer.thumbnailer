@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=braw-thumbnailer
+Exec=braw-thumbnailer %i %o %s
+MimeType=application/x-braw-clip;
