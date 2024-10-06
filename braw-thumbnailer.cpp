@@ -62,11 +62,14 @@ bool IsDir(const std::string& path)
 
 const char* GetLibraryPath()
 {
-    // Note: It seems like only /usr/lib directories are supported by Nautilus if using Nemo/Dolphin you can use /opt/resolve/libs
     static const char* lib_path = "/usr/lib/blackmagic/BlackmagicRAWSDK/Linux/Libraries";
     static const char* lib64_path = "/usr/lib64/blackmagic/BlackmagicRAWSDK/Linux/Libraries";
+    static const char* resolve_opt = "/opt/resolve/libs"; // This one won't work for Nautilus
     
     if (!IsDir(std::string(lib_path))) {
+        if (!IsDir(std::string(lib64_path))) {
+            return resolve_opt;
+        }
         return lib64_path;
     }
     return lib_path;
@@ -152,7 +155,7 @@ int main(int argc, const char* argv[])
 {
     if (argc != 4)
     {
-        std::cerr << "BRAWThumbnailer (v0.1) Usage: " << argv[0] << " <input_file.braw> <output_file.png> <size>" << std::endl;
+        std::cerr << "BRAWThumbnailer (v0.1.1) Usage: " << argv[0] << " <input_file.braw> <output_file.png> <size>" << std::endl;
         return 1;
     }
 
