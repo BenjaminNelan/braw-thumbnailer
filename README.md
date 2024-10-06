@@ -77,5 +77,8 @@ G_MESSAGES_DEBUG=all nautilus
 ---
 
 ## Changelog
+v0.1.1
+- Added a fallback to `/opt/resolve/libs` so that non-root users who aren't using nautilus can still use it.
+
 v0.1
 - First release
