@@ -45,7 +45,7 @@ In **Dolphin** you'll need to go to _Configure_ -> _Configure Dolphin_ settings 
 In **Nemo** you'll need to go to File -> Preferences and then Preview and ensure that _'Show thumbnails'_ is on and _'Only for files smaller than'_ is set to something large... we all know how big BRAW files can get.
 
 If you have footage that is large than 64GB _(I know I do...)_ you can modify the settings further using a tool called `dconf-editor`:
-![Editing nemo settings with dconf-editor](docs/nemo-dconf.jpeg)
+![Editing nemo settings with dconf-editor](docs/nemo-dconf.jpg)
 
 We can push past Nemo's 64GB limit by setting `/org/nemo/preferences/thumbnail-limit` to `137438953472` bytes, approximately 128 GB. 
 But be aware that this will not show up in the user interface, it will look like it has been set back to 1MB even though it hasn't.
