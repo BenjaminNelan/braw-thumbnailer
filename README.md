@@ -1,5 +1,5 @@
 # Blackmagic RAW Thumbnailer
-Add .BRAW thumbnail generation to Linux (currently only tested on Fedora 40).
+Add .BRAW thumbnail generation to Linux (this version is tested on Ubuntu 25.10)
 ![Blackmagic RAW thumbnails in Nemo](docs/thumbnails.jpeg)
 
 ---
@@ -7,9 +7,9 @@ Add .BRAW thumbnail generation to Linux (currently only tested on Fedora 40).
 ## Installation
 
 ### Building
-Install the depedencies (based on Fedora 40):
+Install the depedencies (based on Ubuntu 25.10):
 ```sh
-sudo dnf install gcc-c++ make ImageMagick-c++-devel pkgconfig
+sudo apt install g++ libmagick++-dev pkg-config make
 ```
 
 Make sure you have:
@@ -22,7 +22,7 @@ Then open the terminal in the directory and run `make`
 ### Install
 To install you can then run:
 ```sh
-sudo sh install.sh
+sudo bash install.sh
 ```
 
 This install script will:
@@ -59,7 +59,7 @@ And you might need to use `dconf-editor` to change the thumbnail file size limit
 ## Clearing thumbnail cache
 You may also need to clear the thumbnails cache in order to get them to load:
 ```sh
-sh clear_thumbnails_cache.sh
+bash clear_thumbnails_cache.sh
 ```
 
 ## Debugging
